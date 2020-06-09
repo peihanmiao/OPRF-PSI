@@ -1,0 +1,17 @@
+#!/bin/bash
+
+cd ..
+git clone --recursive https://github.com/osu-crypto/libOTe.git
+cd libOTe
+git checkout a2bc326
+cd cryptoTools
+git checkout 2607541
+cd thirdparty/linux
+bash all.get
+cd ../../..
+cmake -D ENABLE_MIRACL=ON .
+make
+cd ../OPRF-PSI
+cmake .
+make
+
