@@ -1,10 +1,10 @@
 # PSI From Lightweight OPRF
-This is the implementation of our paper **Private Set Intersection in the Internet Setting From Lightweight Oblivious PRF**.
+This is the implementation of our paper **Private Set Intersection in the Internet Setting From Lightweight Oblivious PRF** published in CRYPTO 2020 [[eprint](https://eprint.iacr.org/2020/729.pdf)].
 
 ## Installation
 The implementation has been tested on Linux. To download the code and compile, run the following commands. It will also download and compile the libraries of [`libOTe`](https://github.com/osu-crypto/libOTe), [`Boost`](https://sourceforge.net/projects/boost/), and [`Miracl`](https://github.com/miracl/MIRACL).
 ```
-$ git clone --recursive git@github.com:peihanmiao/OPRF-PSI.git
+$ git clone --recursive https://github.com/peihanmiao/OPRF-PSI.git
 $ cd OPRF-PSI
 $ bash compile
 ```
