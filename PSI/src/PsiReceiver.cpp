@@ -252,9 +252,9 @@ namespace PSI {
 			}
 		}
 		
-		if (psi == 100) {
-			std::cout << "Receiver intersection computed - correct!\n";
-		}
+		//if (psi == 100) {
+			std::cout << "Receiver intersection computed Number is [" << psi << "]\n";
+		//}
 		timer.setTimePoint("Receiver intersection computed");
 		
 		
