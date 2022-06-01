@@ -6,12 +6,19 @@ cd libOTe
 git checkout a2bc326
 cd cryptoTools
 git checkout 2607541
-cd thirdparty/linux
-bash all.get
+cd thirdparty/linux 
+wget -c 'https://boostorg.jfrog.io/artifactory/main/release/1.69.0/source/boost_1_69_0.tar.bz2' -O ./boost_1_69_0.tar.bz2
+tar xfj boost_1_69_0.tar.bz2
+mv boost_1_69_0 boost
+rm  boost_1_69_0.tar.bz2
+cd ./boost
+./bootstrap.sh
+./b2 stage --with-system --with-thread link=static -mt
+cd ../
+bash miracl.get
 cd ../../..
 cmake -D ENABLE_MIRACL=ON .
 make
 cd ../OPRF-PSI
 cmake .
 make
-
