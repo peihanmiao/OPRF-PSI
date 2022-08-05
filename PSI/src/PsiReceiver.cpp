@@ -141,7 +141,7 @@ namespace PSI {
 			
 			for (auto i = 0; i < w; ++i) {
 				for (auto j = 0; j < receiverSize; ++j) {
-					auto location = (*(u32*)(transLocations[i] + j * locationInBytes)) & shift;
+					auto location = ((*(u32*)(transLocations[i] + j * locationInBytes)) & shift) % height;
 					
 					matrixDelta[i][location >> 3] &= ~(1 << (location & 7));
 				}
@@ -174,7 +174,7 @@ namespace PSI {
 	
 			for (auto i = 0; i < w; ++i) {
 				for (auto j = 0; j < receiverSize; ++j) {
-					auto location = (*(u32*)(transLocations[i] + j * locationInBytes)) & shift;
+					auto location = ((*(u32*)(transLocations[i] + j * locationInBytes)) & shift) % height;
 					
 					transHashInputs[i + wLeft][j >> 3] |= (u8)((bool)(matrixA[i][location >> 3] & (1 << (location & 7)))) << (j & 7);
 				}		
